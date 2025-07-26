@@ -6,21 +6,20 @@
 	"author": "Nolovenodie",
 	"homepage_url": "https://ssky.me",
 	"icons": {
-		"16": "static/img/icon.png",
-		"19": "static/img/icon.png",
-		"38": "static/img/icon.png",
-		"48": "static/img/icon.png",
-		"128": "static/img/icon.png"
+		"16": "res/icon.png",
+		"19": "res/icon.png",
+		"38": "res/icon.png",
+		"48": "res/icon.png",
+		"128": "res/icon.png"
 	},
 	"browser_action": {
-		"default_icon": "static/img/icon.png",
+		"default_icon": "res/icon.png",
 		"default_title": "Misty Tools."
 	},
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
-			"css": ["static/css/style.css"],
-			"js": ["static/js/jquery-3.6.0.min.js", "static/js/common-utils.js", "static/js/md5.min.js", "content/main.js"],
+			"js": ["dist/bundle.js"],
 			"run_at": "document_end"
 		}
 	],

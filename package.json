@@ -1,0 +1,37 @@
+{
+  "name": "emby-crx",
+  "version": "1.0.0",
+  "description": "## EN & CN - [简体中文](README.md) - [English](README-EN.md)",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "lint": "prettier --write '**/*.{js,css}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2017fighting/emby-crx.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2017fighting/emby-crx/issues"
+  },
+  "homepage": "https://github.com/2017fighting/emby-crx#readme",
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
+    "prettier": "^3.6.2",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.100.2",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "blueimp-md5": "^2.19.0",
+    "core-js": "^3.44.0",
+    "jquery": "^3.7.1"
+  },
+  "browserslist": "> 0.25%, not dead"
+}
