@@ -1,4 +1,5 @@
 import './css/style.css';
+import noTitleCss from './css/no-title.css?inline';
 import $ from 'jquery';
 import md5 from 'blueimp-md5';
 import CommonUtils from './js/common-utils.js';
@@ -9,7 +10,9 @@ class Home {
       items: undefined,
       item: new Map(),
     };
+    this.config = CommonUtils.getCurrentScriptDataset();
     this.itemQuery = {
+      ParentId: this.config.parentid,
       ImageTypes: 'Backdrop',
       EnableImageTypes: 'Logo,Backdrop',
       IncludeItemTypes: 'Movie,Series',
@@ -25,6 +28,12 @@ class Home {
     this.coverOptions = { type: 'Backdrop', maxWidth: 3000 };
     this.logoOptions = { type: 'Logo', maxWidth: 3000 };
     this.initStart = false;
+    // 不显示cardText
+    if (this.config.hidetitle === 'true') {
+      const style = document.createElement('style');
+      style.textContent = noTitleCss;
+      document.head.appendChild(style);
+    }
     setInterval(() => {
       if (window.location.href.indexOf('!/home') != -1) {
         if ($('.view:not(.hide) .misty-banner').length == 0 && $('.misty-loading').length == 0) {

@@ -72,4 +72,16 @@ export default class CommonUtils {
       return 'pc';
     }
   }
+  static getCurrentScriptDataset() {
+    const script = document.currentScript;
+    if (!script) return {};
+
+    const dataset = {};
+    for (const key in script.dataset) {
+      if (Object.prototype.hasOwnProperty.call(script.dataset, key)) {
+        dataset[key] = script.dataset[key];
+      }
+    }
+    return dataset;
+  }
 }

@@ -10,6 +10,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        resourceQuery: /inline/, // 仅处理带 ?inline 的
+        use: 'raw-loader',
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: 'babel-loader',
@@ -17,6 +22,7 @@ module.exports = {
       // 处理 CSS 并注入到页面
       {
         test: /\.css$/i,
+        resourceQuery: { not: [/inline/] }, // 不处理带?inline的
         use: ['style-loader', 'css-loader'],
       },
       // 处理非模块化的 JS（如 jquery/md5）为 sideEffects

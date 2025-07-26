@@ -1,0 +1,3 @@
+.view:not(.hide) .section0 .cardText {
+  display: none !important;
+}
